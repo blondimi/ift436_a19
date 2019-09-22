@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     print(exporter(grille, chemin))
 
-    # Afin de convertir un pavage en PDF:
+    # Afin de convertir un labyrinthe en PDF:
     #
     # 1. Convertir la grille en LaTeX: python3 exporter.py > labyrinthe.tex
     # 2. Compiler: par ex.             pdflatex labyrinthe.tex
