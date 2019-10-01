@@ -31,7 +31,7 @@ def approximation(c, v, p):
     n = len(indices)
     i = 0
 
-    while i < n and poids + p[indices[i]] <= c:
+    while (i < n) and (poids + p[indices[i]] <= c):
         j = indices[i]
         
         valeur += v[j]
