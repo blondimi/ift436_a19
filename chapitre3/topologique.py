@@ -24,7 +24,7 @@ def tri_topologique(G):
             if deg[v] == 0:
                 zeros.append(v)
 
-    return ordre
+    return ordre if len(ordre) == len(V) else None
 
 # Exemple
 if __name__ == "__main__":
