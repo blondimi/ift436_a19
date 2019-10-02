@@ -59,23 +59,29 @@ def parcours_largeur(G, v):
 
 def est_acyclique(G):
     V, E = G
-    visite = set()
 
-    def possede_cycle(u):
-        if u in visite:
+    visite   = set()
+    sur_pile = set()
+
+    def cycle(u):
+        if u in sur_pile:
             return True
-        else:
+        elif u not in visite:
             visite.add(u)
+            sur_pile.add(u)
             
             for v in E[u]:
-                possede_cycle(v)
+                if cycle(v):
+                    return True
 
-            return False
+            sur_pile.remove(u)
+
+        return False
 
     for v in V:
-        if possede_cycle(v):
+        if cycle(v):
             return False
-        
+
     return True
 
 # Exemples
