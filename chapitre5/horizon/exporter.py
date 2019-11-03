@@ -140,7 +140,7 @@ if __name__ == "__main__":
 
     print(exporter(blocs))
 
-    # Afin de convertir une solution en PDF:
+    # Afin de convertir en PDF:
     #
     # 1. Convertir le paysage en LaTeX: python3 exporter.py > paysage.tex
     # 2. Compiler: par ex.              pdflatex paysage.tex
