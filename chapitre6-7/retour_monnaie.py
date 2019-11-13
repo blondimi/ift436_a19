@@ -74,7 +74,7 @@ if __name__ == "__main__":
     exemple("Exemple du diaporama d'introduction",
             582, [1, 5, 10, 25, 100, 200])
     print()
-    exemple("Exemple qui échoue avec l'algorithme vorace",
+    exemple("Exemple qui échoue avec l'algorithme glouton",
             10, [1, 5, 7])
     print()
     exemple("Exemple où l'on ne peut pas retourner la monnaie",
