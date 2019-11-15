@@ -9,7 +9,7 @@ def souschaine_contigue(u, v):
 
         return p
 
-    # Identifier le plus grand préfixe commun de tous les suffixes
+    # Identifier le plus long préfixe commun de tous les suffixes
     s = ""
 
     for i in range(len(u)):
@@ -69,29 +69,27 @@ def souschaine_contigue_dyn(u, v):
 
 def souschaine_dyn(u, v):
     T = [[0 for _ in range(len(v) + 1)] for _ in range(len(u) + 1)]
-    i_max = j_max = 0
 
     for i in range(1, len(u) + 1):
         for j in range(1, len(v) + 1):
-            a = u[i - 1]
-            b = v[j - 1]
-
-            if a == b:
+            if u[i - 1] == v[j - 1]:
                 T[i][j] = T[i - 1][j - 1] + 1
             else:
                 T[i][j] = max(T[i - 1][j], T[i][j - 1])
 
-            if T[i][j] > T[i_max][j_max]:
-                i_max, j_max = i, j
-
     # Reconstruire la sous-chaîne max.
-    i, j = i_max, j_max
+    i, j = len(u), len(v)
     s = ""
 
     while T[i][j] > 0:
-        s = u[i - 1] + s
-        i -= 1
-        j -= 1
+        if u[i - 1] == v[j - 1]:
+            s = u[i - 1] + s
+            i -= 1
+            j -= 1
+        elif T[i - 1][j] >= T[i][j - 1]:
+            i -= 1
+        else:
+            j -= 1
 
     return s
 
