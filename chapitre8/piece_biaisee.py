@@ -8,7 +8,7 @@ def pile_face(piece_biaisee):
         if x != y:
             break
 
-    return 0 if x == 0 else 1
+    return x
 
 # Exemples
 if __name__ == "__main__":
